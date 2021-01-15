@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 interface IProps {
   colIndex: number;
   rowIndex: number;
@@ -7,10 +9,10 @@ interface IProps {
 
 const Block: React.FC<IProps> = ({ colIndex, rowIndex }) => {
   return (
-    <div data-cy={`block-${rowIndex}-${colIndex}`}>
-      |{rowIndex}
-      {colIndex}|
-    </div>
+    <Container data-cy={`block-${rowIndex}-${colIndex}`}>
+      {rowIndex}
+      {colIndex}
+    </Container>
   );
 };
 
