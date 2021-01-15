@@ -7,7 +7,7 @@ interface IProps {
 
 const Block: React.FC<IProps> = ({ colIndex, rowIndex }) => {
   return (
-    <div data-cy='block'>
+    <div data-cy={`block-${rowIndex}-${colIndex}`}>
       |{rowIndex}
       {colIndex}|
     </div>
