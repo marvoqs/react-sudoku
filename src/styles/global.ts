@@ -15,7 +15,7 @@ export default createGlobalStyle`
           background: ${theme.colors.background};
           color: ${theme.colors.black};
           display: flex;
-          font-family: sand-serif;
+          font-family: sans-serif;
           height: 100%;
           justify-content: center;
           padding: 15px;
