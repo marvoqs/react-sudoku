@@ -9,8 +9,8 @@ import { GlobalStyles, theme } from './styles';
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <Content>
-      <Title>Sudoku</Title>
+    <Content data-cy='content'>
+      <Title data-cy='title'>Sudoku</Title>
     </Content>
   </ThemeProvider>,
   document.getElementById('root')
