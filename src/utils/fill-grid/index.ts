@@ -1,17 +1,5 @@
 import { GRID, NUMBERS } from 'typings';
-import { identifyWorkingSquare, isInCol, isInRow, isInSquare, shuffle } from 'utils';
-
-const gridExample: GRID = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-];
+import { checkGrid, identifyWorkingSquare, isInCol, isInRow, isInSquare, shuffle } from 'utils';
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -36,14 +24,14 @@ function fillGrid(grid: GRID) {
           if (!isInCol({ col, grid, value })) {
             const square = identifyWorkingSquare({ col, grid, row });
             if (!isInSquare({ square, value })) {
-              // ...
+              grid[row][col] = value;
+              // check grid if it is full, if yes, stop and return true
+              if (checkGrid(grid)) return true;
+              // otherwise we run fillGrid(grid)
+              else if (fillGrid(grid)) return true;
             }
           }
         }
-
-        grid[row][col] = value;
-        // check grid if it is full, if yes, stop and return true
-        // otherqiaw we run fillGrid(grid)
       }
       break;
     }

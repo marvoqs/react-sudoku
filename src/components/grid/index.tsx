@@ -1,9 +1,14 @@
 import React from 'react';
 
+import { createFullGrid } from 'utils';
+
 import Block from './block';
 import { Container, Row } from './styles';
 
 const Grid: React.FC = () => {
+  const grid = createFullGrid();
+  console.log(grid);
+
   return (
     <Container data-cy='grid-container'>
       {/* Using React.Children.toArray() is a better practise than using index as a key when mapping */}
