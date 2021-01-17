@@ -1,4 +1,5 @@
 import React from 'react';
+import useMousetrap from 'react-hook-mousetrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 
@@ -25,7 +26,7 @@ const Block: React.FC<IProps> = ({ colIndex, rowIndex }) => {
   const dispatch = useDispatch<Dispatch<AnyAction>>();
 
   function handleClick() {
-    dispatch(selectBlock([rowIndex, colIndex]));
+    if (!state.isActive) dispatch(selectBlock([rowIndex, colIndex]));
   }
   return (
     <Container active={state.isActive} data-cy={`block-${rowIndex}-${colIndex}`} onClick={handleClick}>

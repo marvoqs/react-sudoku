@@ -7,6 +7,7 @@ import { INDEX } from 'typings';
 
 import Block from './block';
 import { Container, Row } from './styles';
+import useMousetrap from 'react-hook-mousetrap';
 
 const Grid: React.FC = () => {
   const dispatch = useDispatch<Dispatch<AnyAction>>();
@@ -14,6 +15,27 @@ const Grid: React.FC = () => {
   useEffect(() => {
     create();
   }, [create]);
+
+  function moveDown() {
+    console.log('down');
+  }
+
+  function moveLeft() {
+    console.log('left');
+  }
+
+  function moveRight() {
+    console.log('right');
+  }
+
+  function moveUp() {
+    console.log('up');
+  }
+
+  useMousetrap('down', moveDown);
+  useMousetrap('left', moveLeft);
+  useMousetrap('right', moveRight);
+  useMousetrap('up', moveUp);
 
   return (
     <Container data-cy='grid-container'>
