@@ -1,5 +1,4 @@
 import React from 'react';
-import useMousetrap from 'react-hook-mousetrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 
