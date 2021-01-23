@@ -1,6 +1,6 @@
+import global from 'global';
 import { GRID } from 'typings';
 import { copyGrid, getRandomIndex, solveGrid } from 'utils';
-import global from 'global';
 
 /**
  *  A function that removes numbers from a full grid to create a Sudoku Puzzle

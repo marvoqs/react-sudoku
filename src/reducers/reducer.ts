@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 import { GRID } from 'typings';
 
-import { compareArrays, createFullGrid, removeNumbers } from 'utils';
+import { compareArrays, copyGrid, createFullGrid, removeNumbers } from 'utils';
 
 import { IReducer } from './interfaces';
 import * as types from './types';
@@ -12,9 +12,9 @@ function reducer(state = initialState, action: AnyAction): IReducer {
   switch (action.type) {
     case types.CREATE_GRID:
       const solvedGrid: GRID = createFullGrid();
-      const gridCopy: GRID = [...solvedGrid];
+      const gridCopy: GRID = copyGrid(solvedGrid);
       const challengeGrid: GRID = removeNumbers(gridCopy);
-      const workingGrid: GRID = [...challengeGrid];
+      const workingGrid: GRID = copyGrid(challengeGrid);
       return {
         ...state,
         challengeGrid,
