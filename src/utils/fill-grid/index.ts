@@ -35,7 +35,6 @@ function fillGrid(grid: GRID) {
       }
       break;
     }
-    console.log(i, grid);
   }
 
   grid[row][col] = 0;
