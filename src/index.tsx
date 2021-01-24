@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 import { Card, Content, Grid, NewButton, Numbers, Title } from 'components';
-import { configureStore, unregister, reportWebVitals } from 'core';
+import { configureStore, register, reportWebVitals } from 'core';
 import { GlobalStyles, theme } from 'styles';
 
 const store = configureStore();
@@ -26,6 +26,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-unregister();
+register();
 
 reportWebVitals();
